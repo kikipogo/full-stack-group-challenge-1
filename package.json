@@ -1,0 +1,28 @@
+{
+  "name": "full-stack-group-challenge-1",
+  "version": "1.0.0",
+  "description": "The warehousing company you worked with on the JOINs challenge wants you back. They are hiring new people who don't know how to use SQL, so they want a website that makes it simple to view some information in their database using Angular, Express, Node, and SQL.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikipogo/full-stack-group-challenge-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kikipogo/full-stack-group-challenge-1/issues"
+  },
+  "homepage": "https://github.com/kikipogo/full-stack-group-challenge-1#readme",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "pg": "^6.1.3"
+  }
+}
