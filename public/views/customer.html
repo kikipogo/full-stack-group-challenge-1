@@ -1,6 +1,6 @@
 <h1>Welcome to customer</h1>
 
-<table align="center">
+<table class="table" align="center">
   <thead>
     <tr>
     <th>first_name</th>
@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="customer in cc.dummyData">
+    <tr ng-repeat="customer in cc.customer.list">
       <td>{{customer.first_name}}</td>
       <td>{{customer.last_name}}</td>
     </tr>
