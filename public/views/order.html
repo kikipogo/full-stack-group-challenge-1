@@ -1,0 +1,31 @@
+<div class='container'>
+<table>
+  <thead>
+    <tr>
+    <th>order_date</th>
+    <th>description</th>
+    <th>street</th>
+    <th>city</th>
+    <th>state</th>
+    <th>zip</th>
+    <th>address_type</th>
+    <th>first_name</th>
+    <th>last_name</th>
+
+  </tr>
+</thead>
+<tbody>
+<tr ng-repeat="x in oc.dummyData">
+<td>{{x.order_date}}</td>
+<td>{{x.description}}</td>
+<td>{{x.street}}</td>
+<td>{{x.city}}</td>
+<td>{{x.state}}</td>
+<td>{{x.zip}}</td>
+<td>{{x.address_type}}</td>
+<td>{{x.first_name}}</td>
+<td>{{x.last_name}}</td>
+</tr>
+</tbody>
+</table>
+</div>
