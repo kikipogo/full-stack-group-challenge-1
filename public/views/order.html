@@ -1,5 +1,5 @@
 <div class='container'>
-<table>
+<table class='table'>
   <thead>
     <tr>
     <th>order_date</th>
@@ -11,11 +11,10 @@
     <th>address_type</th>
     <th>first_name</th>
     <th>last_name</th>
-
   </tr>
 </thead>
 <tbody>
-<tr ng-repeat="x in oc.dummyData">
+<tr ng-repeat="x in oc.orderList.list">
 <td>{{x.order_date}}</td>
 <td>{{x.description}}</td>
 <td>{{x.street}}</td>
