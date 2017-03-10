@@ -21,12 +21,14 @@ CREATE TABLE orders (
     address_id integer REFERENCES addresses
 );
 
+-- need description from table
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     description character varying(255),
     unit_price numeric(3,2)
 );
 
+-- need order_id, unit_price from table
 CREATE TABLE line_items (
     id SERIAL PRIMARY KEY,
     unit_price numeric(3,2),
@@ -41,6 +43,7 @@ CREATE TABLE warehouse (
     fulfillment_days integer
 );
 
+-- holds key to product_id and warehouse_id
 CREATE TABLE warehouse_product (
     product_id integer NOT NULL REFERENCES products,
     warehouse_id integer NOT NULL REFERENCES warehouse,

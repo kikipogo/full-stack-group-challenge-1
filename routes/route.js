@@ -58,7 +58,11 @@ router.get('/', function(req, res){
       console.log('Error connecting to database: ', errorConnectingToDatabase);
       res.sendStatus(500);
     } else {
-      client.query('SELECT order_date, description, street, city, state, zip, address_type, first_name, last_name FROM orders JOIN addresses ON orders.address_id=addresses.id JOIN line_items ON line_items.order_id=orders.id JOIN products ON products.id=line_items.product_id JOIN customers ON addresses.customer_id = customers.id;', function(errorMakingQuery, result){
+      client.query('SELECT order_date, description, street, city, state, zip, address_type, first_name, last_name' +
+                  'FROM orders JOIN addresses ON orders.address_id=addresses.id' +
+                  'JOIN line_items ON line_items.order_id=orders.id' +
+                  'JOIN products ON products.id=line_items.product_id' +
+                  'JOIN customers ON addresses.customer_id = customers.id;', function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
           console.log('Error making the database query: ', errorMakingQuery);
