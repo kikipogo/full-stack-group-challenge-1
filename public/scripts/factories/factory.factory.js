@@ -1,19 +1,13 @@
 myApp.factory('FactoryFactory', ['$http', function($http){
   var factoryOrder = { list: [] };
+  var factoryCustomer = { list: []};
+
+
+getCustomers();
+getOrder();
 
 
 
-
-
-
-
-
-
-
-
-
-
- getOrder();
   function getOrder() {
     $http({
       method: 'GET',
@@ -39,6 +33,21 @@ myApp.factory('FactoryFactory', ['$http', function($http){
 
 
 
+  function getCustomers() {
+    $http({
+      method: 'GET',
+      url: '/customer'
+    }).then(function(response) {
+      console.log('this is response.data from factory', response.data);
+      console.log('this is response from factory', response);
+      factoryCustomer.list = response.data;
+    });
+  }
+
+  return {
+factoryOrder: factoryOrder,
+factoryCustomer: factoryCustomer
+};
 
 
-    factoryOrder: factoryOrder,
+}]);
