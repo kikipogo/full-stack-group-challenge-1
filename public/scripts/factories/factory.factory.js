@@ -1,7 +1,23 @@
-myApp.factory('FactoryFactory', ['$http', function($http) {
+myApp.factory('FactoryFactory', ['$http', function($http){
+  var factoryOrder = { list: [] };
   var factoryCustomer = { list: []};
 
 
+getCustomers();
+getOrder();
+
+
+
+  function getOrder() {
+    $http({
+      method: 'GET',
+      url: '/order'
+    }).then(function(response) {
+      console.log('response from factory: ', response);
+      console.log('response.data from factory: ', response.data);
+      factoryOrder.list = response.data;
+    });
+  }
 
 
 
@@ -17,16 +33,6 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
 
 
 
-
-
-
-
-
-
-
-
-
-  getCustomers();
   function getCustomers() {
     $http({
       method: 'GET',
@@ -35,13 +41,13 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
       console.log('this is response.data from factory', response.data);
       console.log('this is response from factory', response);
       factoryCustomer.list = response.data;
-
     });
   }
 
   return {
-
-
-  factoryCustomer: factoryCustomer
+factoryOrder: factoryOrder,
+factoryCustomer: factoryCustomer
 };
+
+
 }]);
