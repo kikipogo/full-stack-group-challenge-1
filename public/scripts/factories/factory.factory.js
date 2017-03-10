@@ -1,12 +1,21 @@
 myApp.factory('FactoryFactory', ['$http', function($http){
+  var factoryWarehouse = { list: [] };
   var factoryOrder = { list: [] };
-  var factoryCustomer = { list: []};
+  var factoryCustomer = { list: [] };
 
+  getWarehouse();
+  getCustomers();
+  getOrder();
 
-getCustomers();
-getOrder();
-
-
+  function getWarehouse() {
+    $http({
+      method: 'GET',
+      url: '/warehouse'
+    }).then(function(response){
+      factoryWarehouse.list = response.data;
+      console.log('logging in factory in function', factoryWarehouse.list);
+    });//ends .then
+  } //ends getWarehouse function
 
   function getOrder() {
     $http({
@@ -18,20 +27,6 @@ getOrder();
       factoryOrder.list = response.data;
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   function getCustomers() {
     $http({
@@ -45,9 +40,9 @@ getOrder();
   }
 
   return {
-factoryOrder: factoryOrder,
-factoryCustomer: factoryCustomer
-};
-
+    factoryWarehouse: factoryWarehouse,
+    factoryOrder: factoryOrder,
+    factoryCustomer: factoryCustomer
+  };
 
 }]);

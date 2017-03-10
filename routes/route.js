@@ -23,7 +23,11 @@ router.get('/warehouse', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
+<<<<<<< HEAD
+          res.status(200).sent(result.rows);
+=======
           res.status(200).send(result.rows);
+>>>>>>> develop
         }
       });//end of function(errorMakingQuery, result)
     }
@@ -43,7 +47,11 @@ router.get('/customer', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
+<<<<<<< HEAD
+          res.status(200).sent(result.rows);
+=======
           res.status(200).send(result.rows);
+>>>>>>> develop
         }
       });//end of function(errorMakingQuery, result)
     }
@@ -64,7 +72,11 @@ router.get('/order', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
+<<<<<<< HEAD
+          res.status(200).sent(result.rows);
+=======
           res.status(200).send(result.rows);
+>>>>>>> develop
         }
       });//end of function(errorMakingQuery, result)
     }

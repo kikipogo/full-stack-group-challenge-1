@@ -1,5 +1,7 @@
-myApp.controller('WarehouseController', function(){
+myApp.controller('WarehouseController',['FactoryFactory', function(FactoryFactory){
   console.log('Warehouse Controller was loaded');
+
   var self = this;
-  self.someMessage = 'This site is amazing!!';
-});
+  self.warehouseData = FactoryFactory.factoryWarehouse;
+
+}]);
