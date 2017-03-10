@@ -1,8 +1,7 @@
 myApp.factory('FactoryFactory', ['$http', function($http){
-var self = this;
 var factoryWarehouse = { list: [] };
+
 getWarehouse();
-//line 3
 function getWarehouse() {
   $http({ //this is like our AJAX call
     method: 'GET',
@@ -14,51 +13,35 @@ function getWarehouse() {
 } //ends getWarehouse function
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 return {
   factoryWarehouse: factoryWarehouse,
-  // getWarehouse: getWarehouse
-}
 
 
-
-//line 20
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//line 35
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//return on line 50
-
-
-
-
-
-
-
-
-
+};
 }]);
