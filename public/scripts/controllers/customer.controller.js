@@ -1,5 +1,4 @@
-myApp.controller('CustomerController', function(){
-  console.log('Customer Controller was loaded');
+myApp.controller('CustomerController', [ 'FactoryFactory', function(FactoryFactory){
   var self = this;
-  self.someMessage = 'This site is amazing!!';
-});
+  self.customer = FactoryFactory.factoryCustomer;
+}]);

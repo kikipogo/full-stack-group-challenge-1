@@ -11,7 +11,7 @@ var config = {
 var pool = new pg.Pool(config);
 
 //warehouse view should include warehouse, fulfillment_days
-router.get('/', function(req, res){
+router.get('/warehouse', function(req, res){
   pool.connect(function(errorConnectingToDatabase, client, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to database: ', errorConnectingToDatabase);
@@ -23,7 +23,7 @@ router.get('/', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
-          res.send(result.rows);
+          res.status(200).send(result.rows);
         }
       });//end of function(errorMakingQuery, result)
     }
@@ -31,7 +31,7 @@ router.get('/', function(req, res){
 });//end og router.get
 
 //customer view should include first_name, last_name
-router.get('/', function(req, res){
+router.get('/customer', function(req, res){
   pool.connect(function(errorConnectingToDatabase, client, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to database: ', errorConnectingToDatabase);
@@ -43,7 +43,7 @@ router.get('/', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
-          res.sendStatus(201);
+          res.status(200).send(result.rows);
         }
       });//end of function(errorMakingQuery, result)
     }
@@ -52,7 +52,7 @@ router.get('/', function(req, res){
 
 //The orders view should have a table that includes this information which will require a few JOINs:
 //should include order_date, description, street, city, state, zip, address_name, first_name, last_name
-router.get('/', function(req, res){
+router.get('/order', function(req, res){
   pool.connect(function(errorConnectingToDatabase, client, done){
     if(errorConnectingToDatabase) {
       console.log('Error connecting to database: ', errorConnectingToDatabase);
@@ -64,7 +64,7 @@ router.get('/', function(req, res){
           console.log('Error making the database query: ', errorMakingQuery);
           res.sendStatus(500);
         } else {
-          res.sendStatus(201);
+          res.status(200).send(result.rows);
         }
       });//end of function(errorMakingQuery, result)
     }
