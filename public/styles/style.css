@@ -1,0 +1,17 @@
+table {
+  width: 40%;
+  text-align: center;
+}
+
+tr:first-child{
+  background-color: teal !important;
+  text-align: center;
+}
+
+tr:nth-child(odd){
+  background-color: lightgrey;
+}
+tr{
+  padding: 20px;
+  height: 30px;
+}

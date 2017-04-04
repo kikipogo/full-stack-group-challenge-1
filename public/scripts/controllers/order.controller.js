@@ -1,5 +1,5 @@
-myApp.controller('OrderController', function(){
+myApp.controller('OrderController', ['FactoryFactory', function(FactoryFactory){
   console.log('Order Controller was loaded');
   var self = this;
-  self.someMessage = 'This site is amazing!!';
-});
+  self.orderList = FactoryFactory.factoryOrder;
+}]);
